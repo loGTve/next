@@ -6,7 +6,6 @@ import {
     Collapse, FormControlLabel, Button, Switch
 } from '@material-ui/core';
 
-
 import { IconButton } from '@material-ui/core';
 import {Category, Menu} from '@material-ui/icons';
 
