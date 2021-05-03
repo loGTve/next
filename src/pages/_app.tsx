@@ -46,8 +46,6 @@ const bars = makeStyles((theme: Theme) =>
 )
 
 
-
-
 export default function App() {
     const barStyle = bars();
     const listStyles = lists();
