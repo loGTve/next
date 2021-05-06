@@ -1,14 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import useToggle from 'react-use-toggle';
 import {
     AppBar, Toolbar, Paper,
     createStyles, makeStyles, Theme,
-    Collapse, FormControlLabel, Button, Switch, Icon
+    Collapse
 } from '@material-ui/core';
-
 import { IconButton } from '@material-ui/core';
-import {Category, Menu} from '@material-ui/icons';
+import { Menu } from '@material-ui/icons';
 
 
 const lists = makeStyles((theme: Theme) =>
@@ -48,9 +46,6 @@ const bars = makeStyles((theme: Theme) =>
 
 
 
-
-
-
 export default function App() {
 
     const barStyle = bars();
@@ -67,11 +62,9 @@ export default function App() {
     return (
         <div className={barStyle.root}>
             <AppBar position="static" className={barStyle.barColor}>
-                <label>
                 <Toolbar>
-                    <FormControlLabel control={<IconButton onClick={handleChange}  color="inherit"><Menu /></IconButton>} label={"목록"}/>
+                    <IconButton onClick={handleChange}  color="inherit"><Menu /></IconButton>
                 </Toolbar>
-                </label>
             </AppBar>
             <div className={listStyles.root}>
                 <Collapse in={show}>
@@ -83,6 +76,5 @@ export default function App() {
                 </Collapse>
             </div>
         </div>
-
     )
 }
