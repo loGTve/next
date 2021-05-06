@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import useToggle from 'react-use-toggle';
 import {
     AppBar, Toolbar, Paper,
     createStyles, makeStyles, Theme,
-    Collapse, FormControlLabel, Button, Switch
+    Collapse, FormControlLabel, Button, Switch, Icon
 } from '@material-ui/core';
 
 import { IconButton } from '@material-ui/core';
@@ -46,24 +47,31 @@ const bars = makeStyles((theme: Theme) =>
 )
 
 
+
+
+
+
 export default function App() {
+
     const barStyle = bars();
     const listStyles = lists();
 
     let [show, setShow] = React.useState(false);
 
-
     const handleChange = () => {
-        setShow((prev) => !prev);
-    };
+        setShow((prev) => !prev)
+    }
+
 
 
     return (
         <div className={barStyle.root}>
             <AppBar position="static" className={barStyle.barColor}>
+                <label>
                 <Toolbar>
-                    <FormControlLabel control={<IconButton onClick={() => setShow(show = true)} onChange={handleChange} color="inherit"><Menu /></IconButton>} label="목록"/>
+                    <FormControlLabel control={<IconButton onClick={handleChange}  color="inherit"><Menu /></IconButton>} label={"목록"}/>
                 </Toolbar>
+                </label>
             </AppBar>
             <div className={listStyles.root}>
                 <Collapse in={show}>
