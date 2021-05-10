@@ -33,7 +33,7 @@ const lists = makeStyles((theme: Theme) =>
 const bars = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-          flexGrow: 1,
+            paddingTop: theme.spacing(7),
         },
         barColor: {
             backgroundColor: "lightBlue"
@@ -61,7 +61,7 @@ export default function App() {
 
     return (
         <div className={barStyle.root}>
-            <AppBar position="static" className={barStyle.barColor}>
+            <AppBar position="fixed" className={barStyle.barColor}>
                 <Toolbar>
                     <IconButton onClick={handleChange}  color="inherit"><Menu /></IconButton>
                 </Toolbar>
