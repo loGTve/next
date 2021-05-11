@@ -7,13 +7,14 @@ import {
 } from '@material-ui/core';
 import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
+import Index from "./index";
 
 
 const lists = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-          height: 700,
-          width: 300,
+            height: 700,
+            width: 300,
         },
         paper: {
             margin: theme.spacing(1),
@@ -75,6 +76,7 @@ export default function App() {
                     </Paper>
                 </Collapse>
             </div>
+            <Index/>
         </div>
     )
 }
