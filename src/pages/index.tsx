@@ -1,39 +1,16 @@
 import React from 'react';
 import { Paper, makeStyles, createStyles, Theme } from '@material-ui/core';
-import { UncontrolledCarousel } from 'reactstrap';
+import Image from 'next/image';
+
 
 const style = makeStyles((theme: Theme) =>
     createStyles ({
         divTop: {
-            paddingTop: theme.spacing(12),
+            paddingTop: theme.spacing(4),
             flex: 1,
         },
     })
 )
-
-const carouselImgs = [
-    {
-        src: "https://t2.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/TRE/image/jSbbIDabdmD5S54u1gX-1W64ok0",
-        altText: "Space 1",
-        caption: 'Slide 1',
-        header: 'Slide 1 Header',
-        key: "1",
-    },
-    {
-        src: "https://imgnn.seoul.co.kr/img/upload/2020/09/25/SSI_20200925104855.jpg",
-        altText: "Space 2",
-        caption: 'Slide 2',
-        header: 'Slide 2 Header',
-        key: "2",
-    },
-    {
-        src: 'http://www.artinsight.co.kr/data/news/1910/833266554_iSIxjXoa_maxresdefault-3.jpg',
-        altText: "Space 3",
-        caption: 'Slide 3',
-        header: 'Slide 3 Header',
-        key: "3",
-    },
-];
 
 
 
@@ -45,8 +22,15 @@ export default function Index() {
     return (
         <div className={divStyle.divTop}>
             <div>
-                <UncontrolledCarousel items={carouselImgs} />
+                <Image src="https://media-exp1.licdn.com/dms/image/C4D1BAQGAO9zvVhyAqQ/company-background_10000/0/1539806088038?e=2159024400&v=beta&t=5vq2-UBGsfB5RPQaOHqFEHtmdq47wFGYL27qOMblKwc"
+                       alt="Space Banner"
+                       width={1920}
+                       height={200}
+                       objectFit="cover"
+                       objectPosition="bottom"
+                />
             </div>
+
         </div>
     )
 

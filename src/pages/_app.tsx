@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+
 import {
     AppBar, Toolbar, Paper,
     createStyles, makeStyles, Theme,
@@ -15,6 +16,7 @@ const lists = makeStyles((theme: Theme) =>
         root: {
             height: 700,
             width: 300,
+            position: "relative",
         },
         paper: {
             margin: theme.spacing(1),
@@ -41,7 +43,7 @@ const bars = makeStyles((theme: Theme) =>
         },
         iconButton: {
             marginRight: theme.spacing(3),
-        }
+        },
     })
 )
 
@@ -61,14 +63,16 @@ export default function App() {
 
 
     return (
-        <div className={barStyle.root}>
-            <AppBar position="fixed" className={barStyle.barColor}>
-                <Toolbar>
-                    <IconButton onClick={handleChange}  color="inherit"><Menu /></IconButton>
-                </Toolbar>
-            </AppBar>
-            <div className={listStyles.root}>
-                <Collapse in={show}>
+        <React.Fragment>
+            <div className={barStyle.root}>
+                <AppBar position="fixed" className={barStyle.barColor}>
+                    <Toolbar>
+                        <IconButton onClick={handleChange}  color="inherit"><Menu /></IconButton>
+                    </Toolbar>
+                </AppBar>
+            </div>
+            <div style={{zIndex:9999}}>
+                <Collapse in={show} className={listStyles.root} >
                     <Paper elevation={10}>
                         <div className={listStyles.div}> a </div>
                         <div className={listStyles.div}> b </div>
@@ -77,6 +81,6 @@ export default function App() {
                 </Collapse>
             </div>
             <Index/>
-        </div>
+        </React.Fragment>
     )
 }
