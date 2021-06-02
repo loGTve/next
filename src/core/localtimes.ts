@@ -1,14 +1,20 @@
 
-export default function LoTime () {
-
+export default function LoTime() {
     const date = Date();
     const dateSplit = date.split(' ');
+    const hourSplit: string = dateSplit[4];
+    const hourSplit2 = hourSplit.split(':');
+
 
     const Year: string = dateSplit[3];
-    const Day: string = dateSplit[2];
     const MonthEng: string = dateSplit[1];
+    const Day: string = dateSplit[2];
+    const Hour: string = hourSplit2[0];
 
     let Month : string = "";
+
+
+
 
     switch (MonthEng) {
         case 'Jen':
@@ -49,7 +55,8 @@ export default function LoTime () {
             break;
     }
 
-    const Time: string = Year + Month + Day;
+    const Time: string = Year + Month + Day + Hour;
 
 
+    return Time;
 }
