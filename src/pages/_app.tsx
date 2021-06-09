@@ -9,6 +9,7 @@ import {
 import { IconButton } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import Index from "./index";
+import Info from "./info";
 
 
 const lists = makeStyles((theme: Theme) =>
@@ -71,16 +72,21 @@ export default function App() {
                     </Toolbar>
                 </AppBar>
             </div>
-            <div style={{zIndex:9999}}>
+            <Info/>
+            <div>
                 <Collapse in={show} className={listStyles.root} >
                     <Paper elevation={10}>
-                        <div className={listStyles.div}> a </div>
-                        <div className={listStyles.div}> b </div>
+                        <div className={listStyles.div}>
+                            <Link href="./info.tsx">To Info</Link>
+                        </div>
+                        <div className={listStyles.div}>
+                            <Link href="./index.tsx">Main</Link>
+                        </div>
                         <div className={listStyles.divF}> c </div>
                     </Paper>
                 </Collapse>
             </div>
-            <Index/>
+
         </React.Fragment>
     )
 }

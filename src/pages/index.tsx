@@ -6,8 +6,6 @@ import Image from 'next/image';
 const style = makeStyles((theme: Theme) =>
     createStyles ({
         divTop: {
-            paddingTop: theme.spacing(4),
-            flex: 1,
         },
     })
 )
@@ -27,7 +25,7 @@ export default function Index() {
                        width={1920}
                        height={200}
                        objectFit="cover"
-                       objectPosition="bottom"
+                       objectPosition="top"
                 />
             </div>
 

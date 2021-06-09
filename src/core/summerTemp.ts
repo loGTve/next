@@ -12,6 +12,5 @@ import LoTime from './localtimes';
 
     const Weathers = await Axios.get(URL);
 
-    console.log(Weathers.data.response.body.items);
-
+    return(Weathers.data.response.body.items);
 }) ();
